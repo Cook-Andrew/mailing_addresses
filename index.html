@@ -7,7 +7,7 @@
 		<link rel="stylesheet" href="style.css">
 	</head>
 	<body>
-		<div class="login">
+		<div class="login" id="login">
 			<label for="email">Email:</label><br>
 			<input type="email" id="email" name="email"><br>
 			<label for="password">Password:</label><br>
@@ -58,13 +58,14 @@
 						// Get data from Firestore
 						getDocs(collection(db, "mailingaddresses")).then((querySnapshot) => {
 							querySnapshot.forEach((doc) => {
-								document.getElementById('content').innerHTML += doc.data() + '<br>';
+								document.getElementById('content').innerHTML += "Name: " + doc.data().name + "</br>Address: " + doc.data().address + '</br></br>';
 							});
 						});
 					})
 					.catch((error) => {
 						console.error('Error signing in: ', error);
 					});
+					document.getElementById('login').style.display = 'none';
 			}
 
 			document.getElementById('submit').addEventListener('click', login);
