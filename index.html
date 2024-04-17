@@ -15,7 +15,7 @@
 			<input type="email" id="email" name="email"><br>
 			<label for="password">Password:</label><br>
 			<input type="password" id="password" name="password"><br>
-			<button onclick="login()">Submit</button>
+			<button id="submit">Submit</button>
 		</div>
 		<div id="content"></div>
 
@@ -65,6 +65,8 @@
 						console.error('Error signing in: ', error);
 					});
 			}
+			
+			document.getElementById('submit').addEventListener('click', login);
 		</script>
 	</body>
 </html>
