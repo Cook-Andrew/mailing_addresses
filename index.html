@@ -55,7 +55,7 @@
 						var user = userCredential.user;
 
 						// Get data from Firestore
-						db.collection("your_collection").get().then((querySnapshot) => {
+						db.collection("mailingaddresses").get().then((querySnapshot) => {
 							querySnapshot.forEach((doc) => {
 								document.getElementById('content').innerHTML += doc.data() + '<br>';
 							});
